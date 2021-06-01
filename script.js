@@ -1,10 +1,11 @@
+gsap.registerPlugin(ScrollTrigger);
 
 const canvas = document.getElementById("canvasanimation");
 const context = canvas.getContext("2d");
 
 
-canvas.width = 960;
-canvas.height = 540;
+canvas.width = 1158;
+canvas.height = 770;
 
 const frameCount = 110;
 const currentFrame = index => (
@@ -37,3 +38,13 @@ function render() {
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.drawImage(images[poster.frame], 0, 0); 
 }
+
+gsap.to(".header", {
+  scrollTrigger: {
+    trigger: ".header",
+    pin: true,
+    markers: true
+  } 
+  
+
+})
